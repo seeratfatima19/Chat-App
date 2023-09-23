@@ -1,14 +1,15 @@
-const io = require('socket.io')(3000);
+/* const io=require('socket.io')(3000);
 
 const users = {};
 
-
-const port = process.env.PORT || 3000;
-
 io.on('connection', socket => {
+
+    console.log("server running");
+    
     socket.on('new-user', name => {
         users[socket.id] = name;
         socket.broadcast.emit('user-connected', name);
+        console.log('user connected', name);
     });
     socket.on('send-chat-message', message => {
         socket.broadcast.emit('chat-message', { message: message, name: users[socket.id] });
@@ -19,4 +20,14 @@ io.on('connection', socket => {
     });
 }
 );
+*/
+
+const express = require('express');
+const app = express();
+const server= require('http').createServer(app);
+const PORT = process.env.PORT || 3000;
+
+
+
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
