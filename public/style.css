@@ -1,6 +1,16 @@
- body{
-  background: #ffffff;
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   font-size: 16px;
   color: #252525;
  }
@@ -28,6 +38,9 @@
   width:50%;
   color:#ffffff;
   overflow-y: scroll;
+  box-shadow: 0 10px 15px -3px rgba(0,-0,-0,-0.1), 0 4px 6px -2px rgba(0,-0,-0,-0.05);
+  display:flex;
+  flex-direction: column;
  }
 
  .right-message, .left-message{
@@ -58,19 +71,9 @@
     width:50%;
     margin: 0 auto;
   }
-  #send-container{
-    display: block;
-    margin:auto;
-    text-align: center;
-    width:100%;
-    background-color: #252525;
-    padding-bottom:10px;
-  }
-
-  #send-container input{
-    width: 80%;
+  #message-input{
+    width: 100%;
     height: 40px;
-    border-radius: 10px;
     border: none;
     padding: 10px;
     font-size: 16px;
