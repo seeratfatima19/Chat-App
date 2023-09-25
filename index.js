@@ -1,3 +1,5 @@
+
+
 /* const io=require('socket.io')(3000);
 
 const users = {};
@@ -29,7 +31,6 @@ const PORT = process.env.PORT || 3000;
 
 
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 app.use(express.static(__dirname + '/public'));
 
@@ -37,3 +38,22 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
+
+
+// socket code 
+
+const users={};
+
+
+
+const {Server}= require('socket.io');
+
+const io   = new Server(server);
+
+io.on('connection', socket => {
+
+    console.log("socket connected...");}
+);
+
+
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

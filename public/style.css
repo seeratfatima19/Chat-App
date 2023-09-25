@@ -13,6 +13,7 @@ body{
   min-height: 100vh;
   font-size: 16px;
   color: #252525;
+  background-color: #373737;
  }
 
  .container{
@@ -22,20 +23,26 @@ body{
   margin: 0 auto;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
  }
 
 .nav{
   background-color: #00A961;
-  width:50%;
+  width:100%;
   justify-content: center;
   align-items: center;
   color:#ffffff;
 }
 
+.nav h3{
+  margin-left:50px;
+  font-size: 30px;
+}
+
  .chat-container{
   background-color: #252525;
   height:60vh;
-  width:50%;
+  width:100%;
   color:#ffffff;
   overflow-y: auto;
   box-shadow: 0 10px 15px -3px rgba(0,-0,-0,-0.1), 0 4px 6px -2px rgba(0,-0,-0,-0.05);
@@ -68,8 +75,9 @@ body{
   }
 
   .send{
-    width:50%;
+    width:100%;
     margin: 0 auto;
+    background-color: #252525;
   }
 
   textarea{
@@ -77,20 +85,30 @@ body{
     border: none;
   }
   #message-input{
-    width: 100%;
+    width: 80%;
     height: 60px;
     border: none;
     padding: 10px;
+    margin-left:10px;
+    margin-bottom:10px;
     font-size: 16px;
-    background-color:#252525;
+    background-color:#373737;
     color:#ffffff;
     border: none;
 
+  }
+
+  #message-input:focus{
+    outline: none;
+    border: none;
   }
 
   .send-btn{
     background-color: #00A961;
     color:#ffffff;
     padding : 10px;
-    border-radius: 10px;
+    height:60px;
+    border-radius: 5px;
+    width: fit-content;
+    font-size: 15px;
   }
