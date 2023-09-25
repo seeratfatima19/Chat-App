@@ -52,8 +52,25 @@ const io   = new Server(server);
 
 io.on('connection', socket => {
 
-    console.log("socket connected...");}
-);
+    console.log("socket connected...");
+
+    socket.on('new-user', name => {
+        users[socket.id] = name;
+        socket.broadcast.emit('user-connected', name);
+        console.log('user connected', name);
+    });
+    socket.on('send-chat-message', message => {
+        console.log('message received', message);
+        socket.broadcast.emit('chat-message', { message: message, type: 'left' });
+
+        
+    });
+    socket.on('disconnect', () => {
+        socket.broadcast.emit('user-disconnected', users[socket.id]);
+        delete users[socket.id];
+    });
+
+});
 
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
